@@ -21,6 +21,7 @@
     "src/**/*.spec.tsx",
     "src/**/*.spec.ts",
     "node_modules",
-    "lib"
+    "lib",
+    "playground"
   ]
 }
