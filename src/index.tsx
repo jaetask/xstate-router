@@ -65,6 +65,7 @@ export function getRoutes(config) {
 
 export function addRouterEvents(history, configObj, routes) {
   const config = { ...configObj }
+  config.id = config.id || 'machine';
   if (!config.on) {
     config.on = {}
   } else {
@@ -81,7 +82,7 @@ export function addRouterEvents(history, configObj, routes) {
   })
   for (const route of routes) {
       on.push({
-        target: '#(machine).' + route[0].join('.'),
+        target: '#' + config.id + '.' + route[0].join('.'),
         cond: (context, event) => event.dueToStateTransition === false && event.route && event.route === route[1],
         actions: assign(() => ({
             location: history.location,
