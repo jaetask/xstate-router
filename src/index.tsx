@@ -57,7 +57,7 @@ export function getRoutes(config) {
   const routes: any = []
   for (const node of nodes) {
     if (node.meta && node.meta.path) {
-      routes.push([node.path, node.meta.path, node.id])
+      routes.push([node.path, node.meta.path, node.id, node.meta])
     }
   }
   return routes
